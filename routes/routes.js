@@ -223,7 +223,6 @@ router.get("/books/:id", authenticate, async (req, res) => {
 router.post("/books", authenticate, async (req, res) => {
   try {
     const { title, author, price, description } = req.body;
-    console.log("Niceee", { title, author, price, description });
     const newBook = new Book({ title, author, price, description });
     console.log(`new bokk=${newBook}`);
     await newBook.save();
